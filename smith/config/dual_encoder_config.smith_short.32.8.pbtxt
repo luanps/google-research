@@ -4,9 +4,9 @@
 
 encoder_config {
   model_name: "smith_dual_encoder"
-  init_checkpoint: "/tmp/data/uncased_L-12_H-768_A-12/bert_model.ckpt"
-  bert_config_file: "/tmp/data/config/bert_config.json"
-  doc_bert_config_file: "/tmp/data/config/doc_bert_3l_768h_config.json"
+  init_checkpoint: "/tmp/data/uncased_L-12_H-768_A-12/bert_model.ckpt.data-00000-of-00001"
+  bert_config_file: "/tmp/data/configs/bert_config.json"
+  doc_bert_config_file: "/tmp/data/configs/doc_bert_3l_768h_config.json"
   vocab_file: "/tmp/data/uncased_L-12_H-768_A-12/vocab.txt"
   max_seq_length: 32
   max_predictions_per_seq: 5
@@ -21,8 +21,7 @@ encoder_config {
   doc_rep_combine_attention_size: 256
 }
 train_eval_config {
-  input_file_for_train: "/tmp/data/gwikimatch_v2_human_neg_1.train.smith_msenl_32_mdl_64_lm_false.tfrecord"
-  input_file_for_eval: "/tmp/data/gwikimatch_v2_human_neg_1.eval_external_wdp_smith_32_64_false.tfrecord"
+  input_file_for_eval: "/tmp/data/output/small_smith.trecord"
   train_batch_size: 32
   eval_batch_size: 32
   predict_batch_size: 32
